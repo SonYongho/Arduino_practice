@@ -1,0 +1,6 @@
+{
+    "sketch": "button/ex02/led1.ino",
+    "output": "build",
+    "board": "arduino:avr:uno",
+    "port": "/dev/tty.usbmodem11201"
+}

@@ -18,12 +18,15 @@ protected:
     int pin;
     button_callback_t callback; // callback 함수에 대한 포인터
     // void (*callback)(); 과 같다.
+    unsigned long t1;
 
 public:
     Button(int pin);
     void setCallback(button_callback_t callback);
     int read();
     void check();
+    void attachInterrupt(button_callback_t callback, int mode);
+    bool debounce();
 
 private:
 };

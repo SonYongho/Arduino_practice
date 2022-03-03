@@ -1,5 +1,5 @@
 {
-    "sketch": "analog/ex05/led1.ino",
+    "sketch": "button/ex06/led1.ino",
     "output": "build",
     "board": "arduino:avr:uno",
     "port": "/dev/tty.usbmodem11201"

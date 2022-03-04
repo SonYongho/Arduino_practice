@@ -23,3 +23,8 @@ chapter04/build/sketch/app.ino.cpp
 *.elf
 *.eep
 *.hex
+*.cache
+chapter05/build/sketch/app.ino.cpp
+chapter05/build/preproc/ctags_target_for_gcc_minus_e.cpp
+chapter05/build/build.options.json
+chapter05/.vscode/c_cpp_properties.json

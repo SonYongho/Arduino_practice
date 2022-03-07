@@ -28,3 +28,7 @@ chapter05/build/sketch/app.ino.cpp
 chapter05/build/preproc/ctags_target_for_gcc_minus_e.cpp
 chapter05/build/build.options.json
 chapter05/.vscode/c_cpp_properties.json
+chapter06/.vscode/c_cpp_properties.json
+chapter06/build/preproc/ctags_target_for_gcc_minus_e.cpp
+chapter06/build/build.options.json
+chapter06/build/sketch/app.ino.cpp

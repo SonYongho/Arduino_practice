@@ -32,3 +32,13 @@ chapter06/.vscode/c_cpp_properties.json
 chapter06/build/preproc/ctags_target_for_gcc_minus_e.cpp
 chapter06/build/build.options.json
 chapter06/build/sketch/app.ino.cpp
+NODEMCU/.vscode/c_cpp_properties.json
+NODEMCU/build/app.ino.map
+NODEMCU/build/build.options.json
+NODEMCU/build/local.eagle.app.v6.common.ld
+NODEMCU/build/local.eagle.flash.ld
+NODEMCU/build/core/Updater_Signing.h
+NODEMCU/build/ld_h/local.eagle.flash.ld.h
+NODEMCU/build/preproc/ctags_target_for_gcc_minus_e.cpp
+NODEMCU/build/sketch/app.ino.cpp
+*.pyc

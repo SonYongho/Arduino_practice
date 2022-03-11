@@ -1,0 +1,1 @@
+print(f" {msg.topic} {value}")

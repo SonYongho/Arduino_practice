@@ -2,12 +2,12 @@
   {
     "Sourcefile": null,
     "Include": "",
-    "Includepath": "/Users/hyunjinjeong/Documents/Arduino.app/Contents/Java/hardware/arduino/avr/cores/arduino"
+    "Includepath": "/Users/hyunjinjeong/Library/Arduino15/packages/arduino/hardware/avr/1.8.5/cores/arduino"
   },
   {
     "Sourcefile": null,
     "Include": "",
-    "Includepath": "/Users/hyunjinjeong/Documents/Arduino.app/Contents/Java/hardware/arduino/avr/variants/standard"
+    "Includepath": "/Users/hyunjinjeong/Library/Arduino15/packages/arduino/hardware/avr/1.8.5/variants/standard"
   },
   {
     "Sourcefile": "/Users/hyunjinjeong/Documents/workspace/Arduino/chapter04/build/sketch/app.ino.cpp",
@@ -27,7 +27,7 @@
   {
     "Sourcefile": "/Users/hyunjinjeong/Documents/workspace/Arduino/chapter04/build/sketch/app.ino.cpp",
     "Include": "Wire.h",
-    "Includepath": "/Users/hyunjinjeong/Documents/Arduino.app/Contents/Java/hardware/arduino/avr/libraries/Wire/src"
+    "Includepath": "/Users/hyunjinjeong/Library/Arduino15/packages/arduino/hardware/avr/1.8.5/libraries/Wire/src"
   },
   {
     "Sourcefile": "/Users/hyunjinjeong/Documents/workspace/Arduino/chapter04/build/sketch/app.ino.cpp",
@@ -90,12 +90,12 @@
     "Includepath": null
   },
   {
-    "Sourcefile": "/Users/hyunjinjeong/Documents/Arduino.app/Contents/Java/hardware/arduino/avr/libraries/Wire/src/Wire.cpp",
+    "Sourcefile": "/Users/hyunjinjeong/Library/Arduino15/packages/arduino/hardware/avr/1.8.5/libraries/Wire/src/Wire.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "/Users/hyunjinjeong/Documents/Arduino.app/Contents/Java/hardware/arduino/avr/libraries/Wire/src/utility/twi.c",
+    "Sourcefile": "/Users/hyunjinjeong/Library/Arduino15/packages/arduino/hardware/avr/1.8.5/libraries/Wire/src/utility/twi.c",
     "Include": "",
     "Includepath": null
   },

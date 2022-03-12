@@ -1,14 +1,14 @@
-// 수행 평가
-// 1. 이걸 클래스로 정의해서 올리기(RFID Reader라는 이름), bool read()로 읽음, 매개변수 1개의 equalsId(id)로 체크
-// 2. 
-
 #include <SPI.h>
 #include <MFRC522.h>
 #include <Led.h>
 #include <Buzzer.h>
 #include <Servo.h>
+#include <Minicom.h>
+#include <Button.h>
+#include <EEPROM.h>
 
 Servo myServo;
+MiniCom com;
 
 const int servo_pin = 5;
 
@@ -16,8 +16,11 @@ const int servo_pin = 5;
 
 #define SS_PIN 10 // SS핀은 10번으로 설정
 
-Buzzer buzzer(3);
+Button btn(2);
+Buzzer buzzer(6);
 byte myId[] = {67, 250, 203, 49}; // 바이트 배열
+
+Led leds[2] = {Led(7), Led(3)};
 
 // SS핀은 데이터를 주고받는 역할의 핀( SS = Slave Selector )
 
@@ -37,6 +40,9 @@ bool equalId(byte *id1, byte *id2)
 
 void setup()
 {
+    com.init();
+    com.print(0, "[[RFID Door]]");
+    com.print(1, "Waiting");
     Serial.begin(115200);
     SPI.begin();
     mfrc.PCD_Init();
@@ -64,18 +70,23 @@ void loop()
     if (equalId(myId, mfrc.uid.uidByte) == true)
     {
         Serial.println("Equal");
+        com.print(1, "Equal");
         myServo.write(0);
+        leds[0].on();
         buzzer.beep(100);
-        delay(3000);
+        delay(5000);
+        leds[0].off();
         myServo.write(90);
-        
+        com.print(1, "Waiting");
     }
     else
     {
         Serial.println("Not Equal");
-        myServo.write(90);
+        com.print(1, "Not Equal");
+        leds[1].on();
         buzzer.beep(2000);
-        
+        leds[1].off();
+        com.print(1, "Waiting");
     }
 
     buzzer.run();

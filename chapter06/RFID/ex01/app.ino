@@ -1,3 +1,5 @@
+// 클래스 분리
+
 #include <SPI.h>
 #include <MFRC522.h>
 #include <Led.h>

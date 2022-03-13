@@ -63,11 +63,13 @@ bool equalId(byte *id1, byte *id2)
 
 void register_id()
 {
+    SimpleTimer &timer = com.getTimer();
     // 이미 등록되어 있는 카드라면 문구 출력
     if (mfrc.uid.uidByte[0] == myId[0] || mfrc.uid.uidByte[1] == myId[1] || mfrc.uid.uidByte[2] == myId[2] || mfrc.uid.uidByte[3] == myId[3])
     {
         Serial.println("Already registered");
         com.print(1, "Already registered");
+        timer.setTimeout(3000, close_door);
     }
     else
     {
@@ -75,6 +77,7 @@ void register_id()
         {
             EEPROM.write(i, mfrc.uid.uidByte[i]);
         }
+        timer.setTimeout(3000, close_door);
         Serial.println("saved!");
         com.print(1, "saved!");
     }

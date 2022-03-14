@@ -1,5 +1,5 @@
 {
-    "sketch": "RFID/ex01/app.ino",
+    "sketch": "RFID/ex03/app.ino",
     "output": "build",
     "board": "arduino:avr:uno",
     "port": "/dev/tty.usbmodem11201"

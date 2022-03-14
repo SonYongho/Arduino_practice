@@ -140,7 +140,6 @@ void loop()
 
     if (digitalRead(button) == LOW)
     {
-        com.print(1, "sign up your card");
         register_id();
         delay(5000);
     }

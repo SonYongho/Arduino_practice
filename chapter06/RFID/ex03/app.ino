@@ -1,16 +1,12 @@
-// 클래스 분리
-
 #include <SPI.h>
 #include <MFRC522.h>
-#include <Led.h>
 #include <Buzzer.h>
-#include <Servo.h>
 #include <EEPROM.h>
 #include <RFIDReader.h>
 
 #define button 2
-#define RST_PIN 9 // reset핀은 9번으로 설정
-#define SS_PIN 10 // SS핀은 10번으로 설정
+#define RST_PIN 9 // reset핀
+#define SS_PIN 10 // SS핀
 
 MFRC522 mfrc(SS_PIN, RST_PIN);
 Buzzer buzzer(6);
@@ -50,13 +46,14 @@ void loop()
 
     if (digitalRead(button) == LOW)
     {
-        // 이미 등록되어 있는 카드라면 문구 출력
+        // 버튼을 눌렀을 때 이미 등록되어 있는 카드라면 문구 출력
         if (mfrc.uid.uidByte[0] == myId[0] || mfrc.uid.uidByte[1] == myId[1] || mfrc.uid.uidByte[2] == myId[2] || mfrc.uid.uidByte[3] == myId[3])
         {
             Serial.println("Already registered");
         }
         else
         {
+            // 저장되어 있지 않은 ID EEPROM에 저장
             for (int i = 0; i < 4; i++)
             {
                 EEPROM.write(i, mfrc.uid.uidByte[i]);
@@ -68,14 +65,14 @@ void loop()
 
     else
     {
-        reader.read_id(myId);
+        reader.read_id(myId); // EEPROM에서 저장된 아이디 읽기
         Serial.println();
 
-        if (reader.equalId(myId, mfrc.uid.uidByte) == true)
+        if (reader.equalId(myId, mfrc.uid.uidByte) == true) // 저장된 ID와 태그가 같으면 통과
         {
             reader.open_door();
-            delay(5000);
-            reader.close_door();
+            delay(5000); 
+            reader.close_door(); // 열린 문은 5초 뒤에 자동으로 닫힘
         }
 
         else

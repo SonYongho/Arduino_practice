@@ -4,13 +4,13 @@
 #include <EEPROM.h>
 #include <RFIDReader.h>
 
-#define button 2
+#define button 2 // 버튼 핀
 #define RST_PIN 9 // reset핀
 #define SS_PIN 10 // SS핀
 
-MFRC522 mfrc(SS_PIN, RST_PIN);
+MFRC522 mfrc(SS_PIN, RST_PIN); // RFID mfrc
 Buzzer buzzer(6);
-byte myId[4] = {};
+byte myId[4] = {}; // EEPROM에서 읽은 ID 바이트 변수
 
 RFIDReader reader;
 
@@ -20,8 +20,9 @@ void setup()
     Serial.begin(115200);
     reader.init();
     mfrc.PCD_Init();
-    pinMode(button, INPUT_PULLUP);
+    pinMode(button, INPUT_PULLUP); // 버튼을 INPUT PULL UP
     //reader.clear_id();
+    // 필요 시 EEPROM 초기화
     reader.read_id(myId);
 }
 
@@ -76,7 +77,7 @@ void loop()
         }
 
         else
-        {
+        {   // ID가 같지 않을 경우
             reader.not_equal();
         }
     }

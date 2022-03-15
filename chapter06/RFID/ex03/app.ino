@@ -45,6 +45,7 @@ void loop()
     }
     Serial.println();
 
+    // INPUL PULL UP 방식
     if (digitalRead(button) == LOW)
     {
         // 버튼을 눌렀을 때 이미 등록되어 있는 카드라면 문구 출력
